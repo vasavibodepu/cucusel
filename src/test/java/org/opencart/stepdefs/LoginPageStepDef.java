@@ -48,7 +48,7 @@ public class LoginPageStepDef {
 
     @Then("I should be logged in successfully")
     public void i_should_be_logged_in_successfully() {
-Assert.assertEquals(loginPage.checkLogoutLink(), true );
+Assert.assertTrue(loginPage.checkLogoutLink(), String.valueOf(true));
     }
 
     @Given("I have entered invalid {string} and {string}")
@@ -64,7 +64,7 @@ loginPage.enterPassword(password);
 
     @Then("I should see an error message indicating {string}")
     public void i_should_see_an_error_message_indicating(String errorMessage) {
-        Assert.assertEquals(driver.findElement(By.cssSelector(".alert-danger")).isDisplayed(), true );
+        Assert.assertTrue(driver.findElement(By.cssSelector(".alert-danger")).isDisplayed());
 
     }
 
